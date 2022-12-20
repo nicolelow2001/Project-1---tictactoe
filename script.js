@@ -17,11 +17,10 @@ const winnerPrompt = document.querySelector('.player-prompt')
 
 let player1Score = 0
 let player2Score = 0
+let currentPlayer = players.player1
 
 // MAIN GAME LOGIC
 const runGame = function() {
-
-    let currentPlayer = players.player1
 
     for (let tile of tiles) {
     
@@ -140,6 +139,8 @@ const restart = function() {
             tile.classList.remove('clicked')
         }
         newH2.textContent = "Player 1's Turn"
+        currentPlayer = players.player1
+ 
         runGame()
     })
 }
