@@ -67,17 +67,19 @@ main {
     width: 100px;
 }
 
-.player-card h2 {
+.player-card h3 {
     margin: 0;
     padding: 10px 0;
     text-align: center;
+    font-size: 25px;
 }
 
-.player-card h3 {
+.player-card h4 {
     text-align: center;
     border-bottom: 2px solid #2C0E34;
     padding-bottom: 20px;
     margin: 0;
+    font-size: 25px;
 }
 
 .score {
@@ -87,10 +89,11 @@ main {
     padding: 20px 0;
  }
 
- .player-card h4 {
+ .player-card h5 {
     text-align: center;
     margin: 0;
-    padding: 10px 0 20px 0;
+    padding: 10px 0 15px 0;
+    font-size: 18px;
  }
 
 .player-score {
@@ -99,6 +102,15 @@ main {
     background-color: #FFFFFF;
     border-radius: 10px;
     border: 4px solid #2C0E34;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-score span {
+    font-weight: 800;
+    font-size: 25px;
+    color: #2C0E34
 }
 
 .game-container {
@@ -114,6 +126,9 @@ main {
     background-color: #FFFFFF;
     border-radius: 8px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2C0E34;
 }
 
 #game-board {
@@ -150,6 +165,7 @@ main {
 
 .restart-button span {
     font-size: 20px;
+    cursor: default;
 }
 
 .restart-icon {
@@ -160,6 +176,10 @@ main {
 /* HOVER STATES */
 .tile:hover {
     background-color: #c3c0ff;
+}
+
+.clicked:hover {
+    background-color: #9793EB;
 }
 
 .restart-button:hover {
@@ -173,4 +193,8 @@ main {
 
 .o-piece {
     width: 80px;
+}
+
+.winner {
+    background-color: #FFE99B;
 }
