@@ -71,7 +71,7 @@ Unique technical methods used:
 
 *Javascript*
 - `setTimeout()` method (to put a 80 millisecond delay when changing the message prompt, score and winning audio)
-- `audio.volume` DOM Property (to lower the volume of the audio being played since the raw file was a little too loud)
+- `audio.volume` DOM Property (to lower the volume of the audio being played since the raw files were a little too loud)
 
 &nbsp; 
 

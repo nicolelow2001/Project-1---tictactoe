@@ -128,10 +128,29 @@ const runGame = function() {
                                 tile.classList.add('clicked')
                             }
                         } else {
-                            // AUDIO
-                            const laserAudio = document.querySelector('#laser-audio') 
-                            laserAudio.volume = 0.5
-                            laserAudio.play()
+                            let count = 0
+                            for (let tile of tiles) {
+                                if (tile.classList.contains('clicked')) {
+                                    count++
+                                }
+                            }
+                            // DRAW LOGIC
+                            if (count === 9) {
+                                setTimeout(function() {
+                                    newH2.textContent = "Draw!"
+                                    winnerPrompt.classList.add('winner')
+
+                                    //AUDIO
+                                    const drawAudio = document.querySelector('#draw-audio')
+                                    drawAudio.volume = 0.5
+                                    drawAudio.play()
+                                }, 80)
+                            } else {
+                                // AUDIO
+                                const laserAudio = document.querySelector('#laser-audio') 
+                                laserAudio.volume = 0.5
+                                laserAudio.play()
+                            }
                         }
             }
         })
