@@ -17,6 +17,8 @@ const winnerPrompt = document.querySelector('.player-prompt')
 
 let player1Score = 0
 let player2Score = 0
+const scorePlayer1 = document.querySelector('.player1-score span')
+const scorePlayer2 = document.querySelector('.player2-score span')
 let currentPlayer = players.player1
 
 // MAIN GAME LOGIC
@@ -40,15 +42,9 @@ const runGame = function() {
                     newImg.alt = 'O piece'
                     tile.setAttribute('data-piece', 'o')
                 }
-                tile.append(newImg)   
-        
-                // ALTERNATING BETWEEN PIECES
-                if (currentPlayer === players.player1) {
-                    currentPlayer = players.player2
-                } else if (currentPlayer === players.player2) {
-                    currentPlayer = players.player1
-                }
-        
+                tile.append(newImg)  
+
+
                 // PLAYER GUIDE PROMPT
                 if (currentPlayer === players.player1) {
                     setTimeout(function() {
@@ -60,7 +56,16 @@ const runGame = function() {
                         newH2.textContent = "Player 2's Turn"
                     }, 80)
                 }
+        
 
+                // ALTERNATING BETWEEN PIECES
+                if (currentPlayer === players.player1) {
+                    currentPlayer = players.player2
+                } else if (currentPlayer === players.player2) {
+                    currentPlayer = players.player1
+                }
+
+                
                 // CHECK WINNING CONDITION
                 const topLeft = document.querySelector('.top-left')
                 const topMiddle = document.querySelector('.top-middle')
@@ -72,9 +77,6 @@ const runGame = function() {
                 const bottomMiddle = document.querySelector('.bottom-middle')
                 const bottomRight = document.querySelector('.bottom-right')
 
-                const scorePlayer1 = document.querySelector('.player1-score span')
-                const scorePlayer2 = document.querySelector('.player2-score span')
-
 
                 if ((topLeft.dataset.piece === "x" && topMiddle.dataset.piece === "x" && topRight.dataset.piece === "x")||             
                     (middleLeft.dataset.piece === "x" && middleMiddle.dataset.piece === "x" && middleRight.dataset.piece === "x")||               
@@ -84,12 +86,19 @@ const runGame = function() {
                     (topRight.dataset.piece === "x" && middleRight.dataset.piece === "x" && bottomRight.dataset.piece === "x")||                
                     (topLeft.dataset.piece === "x" && middleMiddle.dataset.piece === "x" && bottomRight.dataset.piece === "x")||
                     (topRight.dataset.piece === "x" && middleMiddle.dataset.piece === "x" && bottomLeft.dataset.piece === "x")) {
+                    
                     setTimeout(function() {
                         newH2.textContent = "Player 1 Wins!"
                         player1Score += 1
                         scorePlayer1.textContent = player1Score
                         winnerPrompt.classList.add('winner')
+
+                        // AUDIO
+                        const winAudio = document.querySelector('#win-audio')
+                        winAudio.volume = 0.3
+                        winAudio.play()
                     }, 80)
+
                     for (let tile of tiles) {
                         tile.classList.add('clicked')
                     }
@@ -108,11 +117,21 @@ const runGame = function() {
                                 player2Score += 1
                                 scorePlayer2.textContent = player2Score
                                 winnerPrompt.classList.add('winner')
+                                
+                                // AUDIO
+                                const winAudio = document.querySelector('#win-audio')
+                                winAudio.volume = 0.3
+                                winAudio.play()
                             }, 80)
 
                             for (let tile of tiles) {
                                 tile.classList.add('clicked')
                             }
+                        } else {
+                            // AUDIO
+                            const laserAudio = document.querySelector('#laser-audio') 
+                            laserAudio.volume = 0.5
+                            laserAudio.play()
                         }
             }
         })
@@ -124,7 +143,6 @@ runGame()
 // RESTART BUTTON
 const restart = function() {
     const restartBtn = document.querySelector('.restart-button')
-    console.log(document.querySelector('#game-board'))
     restartBtn.addEventListener('click', function() {
 
         winnerPrompt.classList.remove('winner')
@@ -144,5 +162,76 @@ const restart = function() {
         runGame()
     })
 }
-
 restart()
+
+
+// RESET SCORE BUTTON
+const reset = function() {
+    const resetBtn = document.querySelector('.reset-score-button')
+    resetBtn.addEventListener('click', function() {
+        player1Score = 0
+        player2Score = 0 
+        scorePlayer1.textContent = player1Score
+        scorePlayer2.textContent = player2Score
+    })
+}
+reset()
+
+
+// CHANGE AVATAR BUTTON
+const avatarBtn = function() {
+    const avatarImages = ["images/alien.png", "images/astronaut.png", "images/planet.png", "images/robot.png", "images/ufo.png"]
+
+    const p1LeftArrow = document.querySelector('.p1-left-arrow')
+    const p1RightArrow = document.querySelector('.p1-right-arrow')
+    const p2LeftArrow = document.querySelector('.p2-left-arrow')
+    const p2RightArrow = document.querySelector('.p2-right-arrow')
+
+    // set default avatar
+    const p1Avatar = document.querySelector('.p1-avatar')
+    const p2Avatar = document.querySelector('.p2-avatar')
+
+    p1Index = 0
+    p2Index = 0
+
+    p1Avatar.setAttribute('src', avatarImages[p1Index])
+    p2Avatar.setAttribute('src', avatarImages[p2Index])
+
+    // clicking of buttons
+    p1LeftArrow.addEventListener('click', function() {
+        if (p1Index > 0) {
+            p1Index--
+        } else if (p1Index === 0) {
+            p1Index = avatarImages.length - 1
+        }
+        p1Avatar.setAttribute('src', avatarImages[p1Index])
+    })
+
+    p1RightArrow.addEventListener('click', function() {
+        if (p1Index < avatarImages.length - 1) {
+            p1Index++
+        } else if (p1Index === avatarImages.length - 1) {
+            p1Index = 0
+        }
+        p1Avatar.setAttribute('src', avatarImages[p1Index])
+    })
+
+    p2LeftArrow.addEventListener('click', function() {
+        if (p2Index > 0) {
+            p2Index--
+        } else if (p2Index === 0) {
+            p2Index = avatarImages.length - 1
+        }
+        p2Avatar.setAttribute('src', avatarImages[p2Index])
+    })
+
+    p2RightArrow.addEventListener('click', function() {
+        if (p2Index < avatarImages.length - 1) {
+            p2Index++
+        } else if (p2Index === avatarImages.length - 1) {
+            p2Index = 0
+        }
+        p2Avatar.setAttribute('src', avatarImages[p2Index])
+    })
+}
+avatarBtn()

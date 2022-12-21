@@ -9,7 +9,7 @@ body {
     background-size: cover;
     height: 100vh;
     width: 100vw;
-    font-family: sans-serif;
+    font-family: 'Orbitron', sans-serif;
     display: grid;
     grid-template-rows: 1fr 10fr;
 }
@@ -35,7 +35,7 @@ main {
 }
 
 .player-card {
-    width: 200px;
+    width: 230px;
     height: 420px;
     background-color: rgba(195, 185, 255, 0.5);
     border-radius: 20px;
@@ -49,7 +49,22 @@ main {
 .avatar-img-container {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 30px 0 20px 0;
+}
+
+.avatar-img-container .arrow {
+    object-fit: cover;
+    width: 30px;
+    height: 30px;
+}
+
+.avatar-img-container .left-arrow {
+    transform: rotate(90deg);
+}
+
+.avatar-img-container .right-arrow {
+    transform: rotate(-90deg);
 }
 
 .avatar-img-frame {
@@ -64,12 +79,12 @@ main {
 }
 
 .avatar-img-frame img {
-    width: 100px;
+    width: 80px;
 }
 
 .player-card h3 {
     margin: 0;
-    padding: 10px 0;
+    padding-bottom: 10px;
     text-align: center;
     font-size: 25px;
 }
@@ -80,6 +95,8 @@ main {
     padding-bottom: 20px;
     margin: 0;
     font-size: 25px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
 }
 
 .score {
@@ -152,25 +169,42 @@ main {
     align-items: center;
 }
 
-.restart-button {
+.restart-reset {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.restart-button, .reset-score-button {
     height: 50px;
-    width: 160px;
+    width: 185px;
     background-color: #9793EB;
     border: 4px solid #2C0E34;
     border-radius: 10px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    padding: 8px 0;
 }
 
-.restart-button span {
-    font-size: 20px;
-    cursor: default;
+.restart-reset span {
+    font-size: 15px;
+    font-weight: bold;
 }
 
-.restart-icon {
+.restart-icon, .reset-icon {
     width: 30px;
-    margin-right: 20px;
+    margin-right: 5px;
+}
+
+.reset-icon {
+    width: 25px;
+}
+
+/* POINTER */
+.tile, .restart-button, .reset-score-button, .arrow {
+    cursor: pointer;
 }
 
 /* HOVER STATES */
@@ -182,7 +216,7 @@ main {
     background-color: #9793EB;
 }
 
-.restart-button:hover {
+.restart-button:hover, .reset-score-button:hover {
     background-color: #c3c0ff;
 }
 
@@ -196,5 +230,5 @@ main {
 }
 
 .winner {
-    background-color: #FFE99B;
+    background-color: #aff3ff;
 }
