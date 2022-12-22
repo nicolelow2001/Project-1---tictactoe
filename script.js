@@ -286,17 +286,17 @@ avatarBtn()
 
 // CHANGE NAME BUTTON
 const nameBtn = function() {
-    const nameEditP1 = document.querySelector('.name-p1')
-    const nameEditP2 = document.querySelector('.name-p2')
+    const nameEditP1 = document.querySelector('.name-p1 h3')
+    const nameEditP2 = document.querySelector('.name-p2 h3')
     
     nameEditP1.addEventListener('click', function() {
 
-        const nameH3 = document.querySelector('.name-p1 h3')
-        nameH3.remove()
+        nameEditP1.remove()
 
         const newTextInputP1 = document.createElement('input')
         newTextInputP1.classList.add('nameText', 'name-input-p1')
-        nameEditP1.append(newTextInputP1)
+        const nameP1 = document.querySelector('.name-p1')
+        nameP1.append(newTextInputP1)
 
         const focusP1 = document.querySelector('.name-input-p1')
         focusP1.focus()
@@ -309,12 +309,13 @@ const nameBtn = function() {
     })
 
     nameEditP2.addEventListener('click', function() {
-        const nameH3 = document.querySelector('.name-p2 h3')
-        nameH3.remove()
+
+        nameEditP2.remove()
 
         const newTextInputP2 = document.createElement('input')
         newTextInputP2.classList.add('nameText', 'name-input-p2')
-        nameEditP2.append(newTextInputP2)
+        const nameP2 = document.querySelector('.name-p2')
+        nameP2.append(newTextInputP2)
 
         const focusP2 = document.querySelector('.name-input-p2')
         focusP2.focus()
@@ -324,9 +325,7 @@ const nameBtn = function() {
                 focusP2.blur()
             }
         })
-    })
-
-       
+    })   
 }
 nameBtn()
 
