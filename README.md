@@ -2,11 +2,12 @@
 &nbsp; 
 ## How To Play:
 1. Start by customising your avatar by shuffling between the arrows next to it.
-2. Player 1 begins their move by clicking on any tile on the game board.
-3. After Player 1 makes a move, it is Player 2's turn to make a move.
-4. Keep track of the message prompt and alternate between each player.
-5. The player who manages to get any of their pieces in a straight line of 3 tiles wins!
-6. You can either restart the game, reset the score or do both by clicking on the buttons below the game board at any point.
+2. Click on the name box on each player card to change the name.
+3. Player 1 begins their move by clicking on any tile on the game board.
+4. After Player 1 makes a move, it is Player 2's turn to make a move.
+5. Keep track of the message prompt and alternate between each player.
+6. The player who manages to get any of their pieces in a straight line of 3 tiles wins!
+7. You can either restart the game, reset the score or do both by clicking on the buttons below the game board at any point.
 
 &nbsp; 
 
@@ -33,6 +34,7 @@
 2. Due to the time constraints, I have decided to only include the main game page in the final version and include or omit some of the other pages' features around it.
 3. The features included were coded in Javascript and consisted of:
 > - Avatar customisation 
+> - Name customisation
 > - Player cards with the player's information and a score tracker 
 > - A message prompt bar 
 > - A restart game button 
@@ -58,6 +60,7 @@ Detailed process:
 9. Created a reset score button that resets the existing scores of both players back to 0.
 10. Changed the cursor to a pointer on elements that users are able to click on.
 11. Added 3 different audio effects for when the user places their piece on the game board, if a player wins and if the game draws.
+12. Added the option for users to change their name.
 
 &nbsp; 
 
@@ -72,6 +75,8 @@ Unique technical methods used:
 *Javascript*
 - `setTimeout()` method (to put a 80 millisecond delay when changing the message prompt, score and winning audio)
 - `audio.volume` DOM Property (to lower the volume of the audio being played since the raw files were a little too loud)
+- `focus()` method (to immpediately allow for users to input their name once the name button is clicked so that they would not have to click again into the text field)
+- `blur()` method (to remove the focus on the name text field once the ENTER key is pressed)
 
 &nbsp; 
 
