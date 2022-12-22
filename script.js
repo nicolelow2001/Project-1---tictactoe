@@ -52,12 +52,12 @@ const runGame = function() {
                 // PLAYER GUIDE PROMPT
                 if (currentPlayer === players.player1) {
                     setTimeout(function() {
-                        newH2.textContent = "Player 1's Turn"
+                        newH2.textContent = "Player 2's Turn"
                     }, 80)
         
                 } else if (currentPlayer === players.player2) {
                     setTimeout(function() {
-                        newH2.textContent = "Player 2's Turn"
+                        newH2.textContent = "Player 1's Turn"
                     }, 80)
                 }
         
