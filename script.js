@@ -21,6 +21,7 @@ const scorePlayer1 = document.querySelector('.player1-score span')
 const scorePlayer2 = document.querySelector('.player2-score span')
 let currentPlayer = players.player1
 
+
 // MAIN GAME LOGIC
 const runGame = function() {
 
@@ -95,8 +96,10 @@ const runGame = function() {
 
                         // AUDIO
                         const winAudio = document.querySelector('#win-audio')
-                        winAudio.volume = 0.3
-                        winAudio.play()
+                        if (!winAudio.classList.contains('muted')) {
+                            winAudio.volume = 0.3
+                            winAudio.play()
+                        }
                     }, 80)
 
                     for (let tile of tiles) {
@@ -120,8 +123,10 @@ const runGame = function() {
                                 
                                 // AUDIO
                                 const winAudio = document.querySelector('#win-audio')
-                                winAudio.volume = 0.3
-                                winAudio.play()
+                                if (!winAudio.classList.contains('muted')) {
+                                    winAudio.volume = 0.3
+                                    winAudio.play()
+                                }
                             }, 80)
 
                             for (let tile of tiles) {
@@ -142,14 +147,19 @@ const runGame = function() {
 
                                     //AUDIO
                                     const drawAudio = document.querySelector('#draw-audio')
-                                    drawAudio.volume = 0.7
-                                    drawAudio.play()
+                                    if (!drawAudio.classList.contains('muted')) {
+                                        drawAudio.volume = 0.7
+                                        drawAudio.play()
+                                    }
                                 }, 80)
                             } else {
                                 // AUDIO
                                 const laserAudio = document.querySelector('#laser-audio') 
-                                laserAudio.volume = 0.5
-                                laserAudio.play()
+                                if (!laserAudio.classList.contains('muted')) {
+                                    laserAudio.volume = 0.5
+                                    laserAudio.play()
+                                }
+                                
                             }
                         }
             }
@@ -260,9 +270,9 @@ avatarBtn()
 const nameBtn = function() {
     const nameEditP1 = document.querySelector('.name-p1')
     const nameEditP2 = document.querySelector('.name-p2')
-
+    
     nameEditP1.addEventListener('click', function() {
-        
+
         const nameH3 = document.querySelector('.name-p1 h3')
         nameH3.remove()
 
@@ -297,5 +307,37 @@ const nameBtn = function() {
             }
         })
     })
+
+       
 }
 nameBtn()
+
+
+// MUTE BUTTON
+const muteBtn = function() {
+    const mute = document.querySelector('.mute-button')
+    mute.addEventListener('click', function() {
+        const audios = document.querySelectorAll('audio')
+        for (let audio of audios) {
+            audio.classList.toggle('muted')
+        }
+
+        // change button to unmute
+        const muteIcon = document.querySelector('.mute-button img') 
+        const muteName = document.querySelector('.mute-button span')
+
+        if (muteName.textContent === "Mute") {
+            muteIcon.setAttribute('src', 'images/unmute.png')
+            muteName.textContent = "Unmute"
+        } else {
+            muteIcon.setAttribute('src', 'images/mute.png')
+            muteName.textContent = "Mute"
+        }
+        
+
+    })
+}
+muteBtn()
+
+
+

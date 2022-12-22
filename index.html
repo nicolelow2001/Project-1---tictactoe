@@ -11,7 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- TAB ICON AND TITLE -->
+    <link rel="tab icon" href="images/tab-icon.png" type="image/x-icon">
     <title>Tic - Tac - Toe</title>
+    
 </head>
 <body>  
     <!-- AUDIOS -->
@@ -19,10 +23,20 @@
     <audio id="win-audio" src="audio/win.wav"></audio>
     <audio id="draw-audio" src="audio/draw.wav"></audio>
 
-    <header>
-        <h1>Tic - Tac - Toe</h1>
-    </header>
+    <header class="main-header">
+        <div class="empty-container"></div>
 
+        <h1>Tic - Tac - Toe</h1>
+
+        <div class="mute-container">
+            <div class="mute-button">
+                <img class="mute-icon" src="images/mute.png" alt="Mute icon">
+                <span>Mute</span>
+            </div>
+        </div>
+        
+    </header>
+    
     <main>
         <section class="player-container">
             <div class="player-card player1-card">

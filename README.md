@@ -38,7 +38,8 @@
 > - Player cards with the player's information and a score tracker 
 > - A message prompt bar 
 > - A restart game button 
-> - A reset score button 
+> - A reset score button
+> - A mute/unmute button 
 > - Audio effects
 
 4. The features that were omitted from the original design consisted of:
@@ -61,6 +62,7 @@ Detailed process:
 10. Changed the cursor to a pointer on elements that users are able to click on.
 11. Added 3 different audio effects for when the user places their piece on the game board, if a player wins and if the game draws.
 12. Added the option for users to change their name.
+13. Created a mute/unmute button to toggle between disabling and enabling audio.
 
 &nbsp; 
 
@@ -68,15 +70,18 @@ Unique technical methods used:
 
 *HTML*
 - `<audio></audio>` tag (to be able to play audio based on certain conditions)
+- `<link rel="tab icon" href="images/tab-icon.png" type="image/x-icon">` tag (to insert an icon next to the tab title)
 
 *CSS*
-- element:hover (the game board tiles, restart game button and reset score button)
+- `element:hover` (the game board tiles, restart game button and reset score button)
+- `element:focus` (to remove the preincluded outline on the text input tag when clicked)
 
 *Javascript*
 - `setTimeout()` method (to put a 80 millisecond delay when changing the message prompt, score and winning audio)
 - `audio.volume` DOM Property (to lower the volume of the audio being played since the raw files were a little too loud)
 - `focus()` method (to immpediately allow for users to input their name once the name button is clicked so that they would not have to click again into the text field)
 - `blur()` method (to remove the focus on the name text field once the ENTER key is pressed)
+- `toggle()` method (to switch between adding and removing a class name that either mutes or unmutes any audio in the game)
 
 &nbsp; 
 
