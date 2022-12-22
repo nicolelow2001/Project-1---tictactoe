@@ -18,113 +18,121 @@
     
 </head>
 <body>  
+
+    <div class="star-container">
+        <div class="star-selector"></div>
+    </div>
+
     <!-- AUDIOS -->
     <audio id="laser-audio" src="audio/laser.wav"></audio>
     <audio id="win-audio" src="audio/win.wav"></audio>
     <audio id="draw-audio" src="audio/draw.wav"></audio>
 
-    <header class="main-header">
-        <div class="empty-container"></div>
-
-        <h1>Tic - Tac - Toe</h1>
-
-        <div class="mute-container">
-            <div class="mute-button">
-                <img class="mute-icon" src="images/mute.png" alt="Mute icon">
-                <span>Mute</span>
-            </div>
-        </div>
-        
-    </header>
+    <section class="content-container">
+        <header class="main-header">
+            <div class="empty-container"></div>
     
-    <main>
-        <section class="player-container">
-            <div class="player-card player1-card">
-                <div class="player-content">
-                    <div class="avatar-img-container">
-                        <img class="arrow left-arrow p1-left-arrow" src="images/arrow.png" alt="Arrow icon">
-
-                        <div class="avatar-img-frame">
-                            <img class="p1-avatar" alt="Astronaut avatar">
-                        </div>
-
-                        <img class="arrow right-arrow p1-right-arrow" src="images/arrow.png" alt="Arrow icon">
-                    </div>
-
-                    <header class="name name-p1">
-                        <h3>Player 1</h3>
-                    </header>
-                   
-                    <h4>X</h4>
-
-                    <div class="score">
-                        <h5>Score</h5>
-                        <div class="player-score player1-score">
-                            <span>0</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="game-container">
-            <div class="player-prompt"></div>
-
-            <div id="game-board">
-                <div class="tile top-left"></div>
-                <div class="tile top-middle"></div>
-                <div class="tile top-right"></div>
-                <div class="tile middle-left"></div>
-                <div class="tile middle-middle"></div>
-                <div class="tile middle-right"></div>
-                <div class="tile bottom-left"></div>
-                <div class="tile bottom-middle"></div>
-                <div class="tile bottom-right"></div>
-            </div>
-
-            <div class="restart-reset">
-                <div class="restart-button">
-                    <img class="restart-icon" src="images/restart.png" alt="Restart game icon">
-                    <span>Restart Game</span>
-                </div>
+            <h1>Tic - Tac - Toe</h1>
     
-                <div class="reset-score-button">
-                    <img class="reset-icon" src="images/reset.png" alt="Reset score icon">
-                    <span>Reset Score</span>
+            <div class="mute-container">
+                <div class="mute-button">
+                    <img class="mute-icon" src="images/mute.png" alt="Mute icon">
+                    <span>Mute</span>
                 </div>
             </div>
             
-        </section>
-
-        <section class="player-container">
-            <div class="player-card player2-card">
-                <div class="player-content">
-                    <div class="avatar-img-container">
-                        <img class="arrow left-arrow p2-left-arrow" src="images/arrow.png" alt="Arrow icon">
-
-                        <div class="avatar-img-frame">
-                            <img class="p2-avatar" alt="Alien avatar">
+        </header>
+        
+        <main>
+            <section class="player-container">
+                <div class="player-card player1-card">
+                    <div class="player-content">
+                        <div class="avatar-img-container">
+                            <img class="arrow left-arrow p1-left-arrow" src="images/arrow.png" alt="Arrow icon">
+    
+                            <div class="avatar-img-frame">
+                                <img class="p1-avatar" alt="Astronaut avatar">
+                            </div>
+    
+                            <img class="arrow right-arrow p1-right-arrow" src="images/arrow.png" alt="Arrow icon">
                         </div>
-
-                        <img class="arrow right-arrow p2-right-arrow" src="images/arrow.png" alt="Arrow icon">
-                    </div>
-
-                    <header class="name name-p2">
-                        <h3>Player 2</h3>
-                    </header>
-                    
-                    <h4>O</h4>
-
-                    <div class="score">
-                        <h5>Score</h5>
-                        <div class="player-score player2-score">
-                            <span>0</span>
+    
+                        <header class="name name-p1">
+                            <h3>Player 1</h3>
+                        </header>
+                       
+                        <h4>X</h4>
+    
+                        <div class="score">
+                            <h5>Score</h5>
+                            <div class="player-score player1-score">
+                                <span>0</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
+    
+            <section class="game-container">
+                <div class="player-prompt"></div>
+    
+                <div id="game-board">
+                    <div class="tile top-left"></div>
+                    <div class="tile top-middle"></div>
+                    <div class="tile top-right"></div>
+                    <div class="tile middle-left"></div>
+                    <div class="tile middle-middle"></div>
+                    <div class="tile middle-right"></div>
+                    <div class="tile bottom-left"></div>
+                    <div class="tile bottom-middle"></div>
+                    <div class="tile bottom-right"></div>
+                </div>
+    
+                <div class="restart-reset">
+                    <div class="restart-button">
+                        <img class="restart-icon" src="images/restart.png" alt="Restart game icon">
+                        <span>Restart Game</span>
+                    </div>
+        
+                    <div class="reset-score-button">
+                        <img class="reset-icon" src="images/reset.png" alt="Reset score icon">
+                        <span>Reset Score</span>
+                    </div>
+                </div>
+                
+            </section>
+    
+            <section class="player-container">
+                <div class="player-card player2-card">
+                    <div class="player-content">
+                        <div class="avatar-img-container">
+                            <img class="arrow left-arrow p2-left-arrow" src="images/arrow.png" alt="Arrow icon">
+    
+                            <div class="avatar-img-frame">
+                                <img class="p2-avatar" alt="Alien avatar">
+                            </div>
+    
+                            <img class="arrow right-arrow p2-right-arrow" src="images/arrow.png" alt="Arrow icon">
+                        </div>
+    
+                        <header class="name name-p2">
+                            <h3>Player 2</h3>
+                        </header>
+                        
+                        <h4>O</h4>
+    
+                        <div class="score">
+                            <h5>Score</h5>
+                            <div class="player-score player2-score">
+                                <span>0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </section>
+    
 
     <script src="script.js"></script>
 </body>

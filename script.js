@@ -21,6 +21,9 @@ const scorePlayer1 = document.querySelector('.player1-score span')
 const scorePlayer2 = document.querySelector('.player2-score span')
 let currentPlayer = players.player1
 
+// WINNING ANIMATION
+const star = document.querySelector('.star-selector')
+
 
 // MAIN GAME LOGIC
 const runGame = function() {
@@ -88,6 +91,13 @@ const runGame = function() {
                     (topLeft.dataset.piece === "x" && middleMiddle.dataset.piece === "x" && bottomRight.dataset.piece === "x")||
                     (topRight.dataset.piece === "x" && middleMiddle.dataset.piece === "x" && bottomLeft.dataset.piece === "x")) {
                     
+                    // WINNING ANIMATION
+                    star.classList.add('star')
+                    // removing class after total animation time
+                    setTimeout(function() {
+                        star.classList.remove('star')
+                    }, 2000)
+
                     setTimeout(function() {
                         newH2.textContent = "Player 1 Wins!"
                         player1Score += 1
@@ -115,6 +125,13 @@ const runGame = function() {
                             (topLeft.dataset.piece === "o" && middleMiddle.dataset.piece === "o" && bottomRight.dataset.piece === "o")||
                             (topRight.dataset.piece === "o" && middleMiddle.dataset.piece === "o" && bottomLeft.dataset.piece === "o")) {
                             
+                            // WINNING ANIMATION
+                            star.classList.add('star')
+                            // removing class after total animation time
+                            setTimeout(function() {
+                                star.classList.remove('star')
+                            }, 2000)
+
                             setTimeout(function() {
                                 newH2.textContent = "Player 2 Wins!"
                                 player2Score += 1
@@ -143,7 +160,7 @@ const runGame = function() {
                             if (count === 9) {
                                 setTimeout(function() {
                                     newH2.textContent = "Draw!"
-                                    winnerPrompt.classList.add('winner')
+                                    winnerPrompt.classList.add('draw')
 
                                     //AUDIO
                                     const drawAudio = document.querySelector('#draw-audio')
@@ -175,6 +192,7 @@ const restart = function() {
     restartBtn.addEventListener('click', function() {
 
         winnerPrompt.classList.remove('winner')
+        winnerPrompt.classList.remove('draw')
 
         for (let tile of tiles) {
             if (tile.hasChildNodes()) {

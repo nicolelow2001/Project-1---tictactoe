@@ -4,15 +4,22 @@
 
 body {
     margin: 0;
+    position: relative;
     background-image: url(./images/space-background.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+.content-container {
     height: 100vh;
     width: 100vw;
     font-family: 'Orbitron', sans-serif;
     display: grid;
     grid-template-rows: 1fr 10fr;
     padding: 0 20px;
+    position: absolute;
 }
 
 .main-header {
@@ -26,6 +33,7 @@ header h1 {
     padding: 30px 0 20px 0;
     text-align: center;
     color: #FFFFFF;
+    font-size: 30px;
 }
 
 .mute-container {
@@ -265,7 +273,11 @@ main {
 }
 
 .winner {
-    background-color: #aff3ff;
+    background-color: #ffeea4;
+}
+
+.draw {
+    background-color: #9cf8ff;
 }
 
 .nameText {
@@ -284,4 +296,57 @@ main {
 
 .nameText:focus {
     outline: none;
+}
+
+
+/* WINNER ANIMATION *taken from* (https://www.youtube.com/watch?v=IxG5cQCIVE8&t=118s) */
+.star-container {
+    height: 100vh;
+    width: 100vw;
+    z-index: 0;
+    overflow: hidden;
+    position: absolute;
+}
+
+.star, .star:after, .star:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+    radial-gradient(10px 10px at 100px 50px, #ffd145, transparent),
+    radial-gradient(6px 6px at 200px 150px, #ffd145, transparent),
+    radial-gradient(8px 8px at 300px 250px, #ffd145, transparent),
+    radial-gradient(5px 5px at 400px 350px, #ffd145, transparent),
+    radial-gradient(6px 6px at 500px 100px, #ffd145, transparent),
+    radial-gradient(9px 9px at 50px 200px, #ffd145, transparent),
+    radial-gradient(10px 10px at 150px 300px, #ffd145, transparent),
+    radial-gradient(8px 8px at 250px 400px, #ffd145, transparent),
+    radial-gradient(9px 9px at 350px 500px, #ffd145, transparent);
+    background-size: 700px 700px;
+
+    animation: winnerAnimation 2s linear;
+}
+
+.star:after {
+    margin-left: -250px;
+    opacity: 0.5;
+    filter: blur(2px);
+}
+
+.star:before {
+    margin-left: -350px;
+    opacity: 0.7;
+    filter: blur(1px);
+}
+
+@keyframes winnerAnimation {
+    from {
+        transform: translateY(-700px);
+    }
+    to {
+        transform: translateY(700px);
+    }
 }

@@ -41,6 +41,7 @@
 > - A reset score button
 > - A mute/unmute button 
 > - Audio effects
+> - Winning animation
 
 4. The features that were omitted from the original design consisted of:
 > - Playing against a bot (Due to time constraint, the intended development of an AI opponent was discarded)
@@ -61,8 +62,9 @@ Detailed process:
 9. Created a reset score button that resets the existing scores of both players back to 0.
 10. Changed the cursor to a pointer on elements that users are able to click on.
 11. Added 3 different audio effects for when the user places their piece on the game board, if a player wins and if the game draws.
-12. Added the option for users to change their name.
+12. Added the option for users to change their name at anytime during the game.
 13. Created a mute/unmute button to toggle between disabling and enabling audio.
+14. Implemented an animation where stars fall from the top of the page to the bottom in celebration of when a player wins.
 
 &nbsp; 
 
@@ -75,6 +77,7 @@ Unique technical methods used:
 *CSS*
 - `element:hover` (the game board tiles, restart game button and reset score button)
 - `element:focus` (to remove the preincluded outline on the text input tag when clicked)
+- animations (star falling animation taken from - https://youtu.be/IxG5cQCIVE8)
 
 *Javascript*
 - `setTimeout()` method (to put a 80 millisecond delay when changing the message prompt, score and winning audio)
