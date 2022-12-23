@@ -97,5 +97,8 @@ Unique technical methods used:
 *HTML*
 - A lot of divs were used to structure the page elements which includes nesting divs in other divs and other more semantic elements could be used to represent the content in these divs more clearly and effectively.
 
+*CSS*
+- Making the site responsive because if the browser's width size is reduced, the game layout does not look correct (Due to the time constraints, it couldn't be implemented).
+
 *Javascript*
 -  The winning logic that has been implemented is repeated many times and a shorter and more efficient way to implement it could be used in the future.
