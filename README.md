@@ -1,4 +1,5 @@
 # Tic - Tac - Toe Game
+https://nicolelow2001.github.io/Project-1---tictactoe/
 &nbsp; 
 ## How To Play:
 1. Start by customising your avatar by shuffling between the arrows next to it.
