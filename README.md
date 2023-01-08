@@ -1,5 +1,5 @@
 # Tic - Tac - Toe Game
-https://nicolelow2001.github.io/Project-1---tictactoe/
+https://nicolexylow.github.io/Project-1---tictactoe/
 
 &nbsp; 
 ## How To Play:
